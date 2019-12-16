@@ -1,0 +1,74 @@
+% Copyright 2019 by Sebastian Ehlert
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file LICENSE / COPYING for more details.
+
+\newif\ifbeamer@theme@subsection
+\beamer@theme@subsectiontrue
+
+\DeclareOptionBeamer{subsection}[true]{\csname beamer@theme@subsection#1\endcsname}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\AtBeginDocument{
+  \pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
+    color(0pt)=(bg);
+    color(1pt)=(black!50!bg)}
+}
+
+\setbeamertemplate{mini frames}[box]
+                                % Head
+\defbeamertemplate*{headline}{awvwgk theme}
+{%
+  \begin{beamercolorbox}[colsep=.1pt]{upper separation line head}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}{section in head/foot}
+     \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}%
+  \ifbeamer@theme@subsection%
+  \begin{beamercolorbox}[colsep=.1pt]{middle separation line head}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+     leftskip=.4cm,rightskip=.4cm plus1fil]{subsection in head/foot}
+     \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+  \end{beamercolorbox}%
+  \vskip-3.625ex
+  \pgfuseshading{beamer@topshade}
+  \vskip+3.625ex
+  \vskip-1pt
+  \fi%
+  \begin{beamercolorbox}[colsep=.1pt]{lower separation line head}
+  \end{beamercolorbox}
+  \pgfuseshading{beamer@topshade}
+  \vskip-1pt
+}
+
+\defbeamertemplate*{footline}{awvwgk theme}
+{%
+   %\leavevmode%
+   %\begin{beamercolorbox}[colsep=.1pt]{upper separation line foot}%
+   %\end{beamercolorbox}%
+   \hbox{%
+      \begin{beamercolorbox}%
+         [ht=2.5ex,dp=1.125ex,leftskip=.4cm,rightskip=.4cm]%
+         {author in head/foot}%
+         \usebeamerfont{title in head/foot}%
+         \insertshorttitle\hfill%
+         \usebeamerfont{page number in head/foot}%
+         \usebeamertemplate{page number in head/foot}%
+      \end{beamercolorbox}
+   }%
+   \vskip-3.625ex%
+   \pgfuseshading{beamer@topshade}%
+   \vskip+3.625ex%
+   \vskip-1pt%
+}
+
+
+\mode
+<all>

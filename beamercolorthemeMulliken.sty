@@ -1,0 +1,52 @@
+% Copyright 2019 by Sebastian Ehlert
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file LICENSE / COPYING for more details.
+
+\definecolor{red}{HTML}{FF7700}
+\definecolor{blue}{HTML}{004F9F}
+\definecolor{green}{HTML}{2DCC35}
+\definecolor{yellow}{HTML}{FBB900}
+\definecolor{darkgrey}{HTML}{929084}
+\definecolor{palegrey}{HTML}{DDE0D9}
+
+\colorlet{dark}{darkgrey!35!black}
+\colorlet{light}{palegrey!35!white}
+
+\setbeamercolor{blue accent}{fg=light,bg=blue}
+\setbeamercolor{grey accent}{fg=black,bg=darkgrey}
+\setbeamercolor{yellow accent}{fg=dark,bg=yellow}
+
+\setbeamercolor{structure}{fg=dark,bg=light}
+\setbeamercolor{normal text}{fg=dark,bg=light!50}
+\setbeamercolor{frametitle}{parent=normal text,bg=}
+
+\setbeamercolor{palette primary}{fg=light,bg=blue}
+\setbeamercolor{palette secondary}{parent=structure}
+\setbeamercolor{palette tertiary}{parent=structure,fg=structure.bg,bg=structure.fg}
+\setbeamercolor{palette quaternary}{parent=structure,fg=white,bg=structure.fg}
+
+\setbeamercolor{titlelike}{parent=structure}
+\setbeamercolor{author}{parent=normal text}
+\setbeamercolor{institute}{parent=normal text}
+\setbeamercolor{date}{parent=normal text}
+
+\setbeamercolor{section in head/foot}{parent=palette tertiary}
+\setbeamercolor{subsection in head/foot}{parent=palette secondary}
+\setbeamercolor{author in head/foot}{parent=subsection in head/foot}
+\setbeamercolor{title in head/foot}{parent=section in head/foot}
+
+\setbeamercolor{block title}{parent=structure,fg=white,bg=structure.fg}
+\setbeamercolor{block title alerted}{parent=alerted text,fg=white,bg=alerted text.fg!75!structure.fg}
+\setbeamercolor{block title example}{parent=example text,fg=white,bg=example text.fg!75!structure.fg}
+
+\setbeamercolor{block body}{parent=normal text,parent=block title,bg=block title.bg!10!bg}
+\setbeamercolor{block body alerted}{parent=normal text,parent=block title alerted,bg=block title alerted.bg!10!bg}
+\setbeamercolor{block body example}{parent=normal text,parent=block title example,bg=block title example.bg!10!bg}
+%\setbeamercolor{upper separation line head}{parent=structure}
+%\setbeamercolor{middle separation line head}{parent=structure}
+
